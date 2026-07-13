@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import (roc_auc_score, average_precision_score, brier_score_loss,
    confusion_matrix, f1_score)
 rng=np.random.default_rng(20260713)
-OUT='/Users/sanjaybasu/notebooks/pu-underascertainment'
+OUT='.'
 df=pd.read_parquet(f'{OUT}/dataset.parquet')
 
 # ---- clean ----

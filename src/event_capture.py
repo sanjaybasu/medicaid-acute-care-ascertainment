@@ -6,7 +6,7 @@ from lightgbm import LGBMClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import GroupShuffleSplit
 from sklearn.metrics import roc_auc_score
-cd = coredb("prod"); BASE='/Users/sanjaybasu/notebooks/pu-underascertainment'
+cd = coredb("prod"); BASE='.'
 W0,W1='2024-01-01','2025-12-31'
 # ADT acute events with facility + type + admit source
 adt = query(cd, f"""

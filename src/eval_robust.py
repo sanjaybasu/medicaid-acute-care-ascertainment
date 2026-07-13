@@ -5,7 +5,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import roc_auc_score, brier_score_loss
 from statsmodels.stats.proportion import proportion_confint
-OUT='/Users/sanjaybasu/notebooks/pu-underascertainment'
+OUT='.'
 
 def prep(df):
     for c in ['n_office','n_urgent','n_ed','n_inpat','n_outp','n_total','n_fac','n_prov']: df[c]=df[c].fillna(0)

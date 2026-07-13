@@ -7,7 +7,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import roc_auc_score, average_precision_score, brier_score_loss, confusion_matrix, f1_score
 rng=np.random.default_rng(20260713)
-BASE='/Users/sanjaybasu/notebooks/pu-underascertainment'
+BASE='.'
 cd=coredb("prod")
 df=pd.read_parquet(f'{BASE}/dataset_2025-07-01.parquet')
 fmap=json.load(open(f'{BASE}/facility_rate_map.json')); GM=fmap['global_mean']

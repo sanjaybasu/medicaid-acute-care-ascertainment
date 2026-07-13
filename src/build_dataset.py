@@ -4,7 +4,7 @@ warnings.filterwarnings("ignore")
 # Internal data connector (wm_conn) is loaded from the secure environment; not included here.
 from wm_conn import coredb, query
 cd = coredb("prod")
-OUT='/Users/sanjaybasu/notebooks/pu-underascertainment'
+OUT='.'
 T0 = sys.argv[1] if len(sys.argv)>1 else '2025-07-01'
 t0 = date.fromisoformat(T0); BL=(t0-timedelta(days=365)).isoformat(); MID=(t0-timedelta(days=183)).isoformat(); FUP=(t0+timedelta(days=90)).isoformat()
 print(f"T0={T0} BL={BL} MID={MID} FUP={FUP}")

@@ -6,7 +6,7 @@ from lightgbm import LGBMClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split, GroupShuffleSplit
 from sklearn.metrics import roc_auc_score, average_precision_score, brier_score_loss, confusion_matrix, f1_score
-rng=np.random.default_rng(20260713); BASE='/Users/sanjaybasu/notebooks/pu-underascertainment'
+rng=np.random.default_rng(20260713); BASE='.'
 def prep(df):
     for c in ['n_office','n_urgent','n_ed','n_inpat','n_outp','n_total','n_fac','n_prov']: df[c]=df[c].fillna(0)
     df['no_claims']=df['claims_lag_days'].isna().astype(int); df['claims_lag_days']=df['claims_lag_days'].fillna(9999)

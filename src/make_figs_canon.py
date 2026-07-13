@@ -1,7 +1,7 @@
 import warnings, json, numpy as np, pandas as pd, pathlib
 warnings.filterwarnings("ignore")
 import matplotlib; matplotlib.use('Agg'); import matplotlib.pyplot as plt
-OUT='/Users/sanjaybasu/notebooks/pu-underascertainment'; pathlib.Path(f'{OUT}/figs').mkdir(exist_ok=True)
+OUT='.'; pathlib.Path(f'{OUT}/figs').mkdir(exist_ok=True)
 df=pd.read_parquet(f'{OUT}/dataset_2025-07-01.parquet')
 full=json.load(open(f'{OUT}/results_full.json')); rob=json.load(open(f'{OUT}/results_robust.json'))
 CB=['#0072B2','#E69F00','#009E73','#D55E00','#CC79A7','#56B4E9']

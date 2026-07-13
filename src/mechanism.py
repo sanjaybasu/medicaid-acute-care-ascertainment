@@ -3,7 +3,7 @@ warnings.filterwarnings("ignore")
 # Internal data connector (wm_conn) loaded from secure environment; not included here.
 from wm_conn import coredb, query
 from statsmodels.stats.proportion import proportion_confint
-cd=coredb("prod"); BASE='/Users/sanjaybasu/notebooks/pu-underascertainment'
+cd=coredb("prod"); BASE='.'
 W0,W1='2024-01-01','2025-12-31'
 # ADT acute events
 adt=query(cd,f"""SELECT DISTINCT person_id, encounter_start_date d FROM dbt_tuva_core.encounter

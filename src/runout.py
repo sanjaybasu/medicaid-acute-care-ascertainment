@@ -2,7 +2,7 @@ import sys, pathlib, warnings, json, numpy as np, pandas as pd
 warnings.filterwarnings("ignore")
 # Internal data connector (wm_conn) loaded from secure environment; not included here.
 from wm_conn import coredb, query
-cd=coredb("prod"); BASE='/Users/sanjaybasu/notebooks/pu-underascertainment'
+cd=coredb("prod"); BASE='.'
 # ADT acute events with >=12 mo potential runout (event before 2025-07; extraction ~2026-07)
 adt=query(cd,"""SELECT DISTINCT person_id, encounter_start_date d FROM dbt_tuva_core.encounter
  WHERE data_source='HL7 ADT Feed' AND encounter_start_date BETWEEN '2024-01-01' AND '2025-06-30'
