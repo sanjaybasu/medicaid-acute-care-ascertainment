@@ -10,17 +10,18 @@ full=json.load(open(f'{RES}/results_full.json'))
 rob={r['tag']:r for r in json.load(open(f'{RES}/results_robust.json'))}
 evc=json.load(open(f'{RES}/results_event_capture.json'))
 fv2=json.load(open(f'{RES}/results_full_v2.json'))
+run=json.load(open(f'{RES}/results_runout.json'))
 derived={
  'N_cohort':agg['N_cohort'],
  'rate_claims':round(agg['rate_claims'],3),
  'rate_union':round(agg['rate_union'],3),
  'capture_adt':round(agg['capture_adt'],3),
  'capture_blended':round(agg['capture_blended'],3),
- 'anchor_obs':round(full['naive']['obs'],3),
- 'naive_mean':round(full['naive']['mean_pred'],3),
- 'corrected_mean':round(full['corrected']['mean_pred'],3),
- 'brier_naive':round(full['naive']['brier'],3),
- 'brier_corrected':round(full['corrected']['brier'],3),
+ 'anchor_obs':round(full['obs'],3),
+ 'naive_mean':round(full['naive']['mean_pred'][0],3),
+ 'corrected_mean':round(full['corrected']['mean_pred'][0],3),
+ 'brier_naive':round(full['naive']['brier'][0],3),
+ 'brier_corrected':round(full['corrected']['brier'][0],3),
  'auroc_naive':round(full['naive']['auroc'][0],3),
  'auroc_corrected':round(full['corrected']['auroc'][0],3),
  'rob_exclobs_capture':round(rob['exclude_observation']['capture_overall'][0],3),
@@ -28,6 +29,8 @@ derived={
  'event_capture_auc':round(evc['auc_full_gbm'],3),
  'event_capture_facility_only':round(evc['auc_facility_only'],3),
  'member_capture_auc_new':round(fv2['capture_auc_new'],3),
+ 'runout_540':round(run['curve']['540'],3),
+ 'fwd_lag_median':round(run['fwd_lag_median'],0),
 }
 import csv
 reg=list(csv.DictReader(open(f'{BASE}/audit/data_provenance.csv')))

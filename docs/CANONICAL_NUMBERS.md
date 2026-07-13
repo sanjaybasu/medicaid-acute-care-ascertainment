@@ -16,13 +16,17 @@
 - Capture by claims lag (days): ≤30=29.0%, 31-90=17.5%, 91-180=15.2%, >180=13.9%
 - Ambulatory-claims among ADT-only-acute members = 93.9% (39,642/42,232) [source: characterization query crux4]
 - Capture range across the six ADT-covered plans = 12.6% to 24.5% (four plans 12.6-15.1%; Plan E 24.3%, Plan F 24.5%)
-- Anchor recovery (held-out ADT, n=2,989, truth=28.2%): naive mean 3.8% -> corrected 20.4%
-- Discrimination (anchor): AUROC naive 0.6093 [0.5868,0.6311], corrected 0.6031 [0.5778,0.626]
-- AUPRC: naive 0.3959, corrected 0.3845
-- @top-10%: naive sens 0.171 spec 0.9278 PPV 0.4816 NPV 0.7405 F1 0.2524
-- @top-10%: corrected sens 0.1651 spec 0.9255 PPV 0.4649 NPV 0.7387 F1 0.2436
-- Brier: naive 0.2555, corrected 0.2292
-- Calibration slope/intercept: naive 0.3121/0.3023, corrected 0.1036/-0.8139
+- UNIFIED primary correction (held-out ADT anchor, n=3,099, truth 27.9%; all 95% CI by 1000-boot):
+  - mean predicted: naive 3.4% [3.2,3.7] -> corrected 20.2% [19.4,21.1]
+  - AUROC: naive 0.622 [0.601,0.645], corrected 0.608 [0.586,0.630]
+  - AUPRC: naive 0.400 [0.370,0.433], corrected 0.381 [0.353,0.413]
+  - @top-10%: naive sens 0.169 [0.149,0.190] spec 0.927 [0.919,0.934] PPV 0.471 [0.410,0.529] NPV 0.743 [0.725,0.758] F1 0.249 [0.220,0.279]
+  - @top-10%: corrected sens 0.168 [0.151,0.188] spec 0.926 [0.920,0.934] PPV 0.468 [0.416,0.529] NPV 0.742 [0.725,0.758] F1 0.247 [0.222,0.277]
+  - Brier: naive 0.254 [0.241,0.270], corrected 0.227 [0.215,0.239]
+  - Calibration slope: naive 0.357 [0.296,0.429], corrected 0.099 [0.079,0.122]; intercept naive 0.49 [0.24,0.76], corrected -0.839 [-0.921,-0.756]
+- Capture-model AUROC 95% CI: event 0.788 [0.780,0.797]; member old 0.569 [0.517,0.620]; member new 0.640
+- MECHANISM: of ADT acute events lacking an acute-coded claim within 30d, 81.8% [81.5,82.1] have some claim within +/-7d (18.2% entirely absent); acute-claim capture rises 14.8%(30d) -> 20.0%(90d) -> 24.1%(180d)
+- Recovery ratio naive->truth ~ eightfold (27.9/3.4); population claims vs union ~ fourfold (7.3/1.8)
 - Robustness [primary_union]: capture 24.3% [23.4,25.3]; anchor truth 27.9%, naive 3.4% -> corrected 20.2%; AUROC 0.622->0.608; Brier 0.2544->0.2269
 - Robustness [exclude_observation]: capture 24.5% [23.6,25.5]; anchor truth 27.4%, naive 3.2% -> corrected 19.2%; AUROC 0.628->0.619; Brier 0.2516->0.2221
 - Robustness [altdate_2025-04-01]: capture 21.6% [20.6,22.7]; anchor truth 25.1%, naive 3.5% -> corrected 20.2%; AUROC 0.633->0.625; Brier 0.227->0.2061
@@ -32,3 +36,5 @@
 - STRENGTHENED capture model (event level, n=98,539 ADT acute events, 954 facilities, overall event capture 15.3%): AUROC 0.79 (GBM 0.788, logistic 0.778); facility-reporting-rate only 0.654; plan(mean-encoded)-only 0.732
 - Member-level prospective capture AUROC: old (plan one-hot+lag) 0.569 -> new (+baseline facility-mix + plan mean-encode) 0.640; members with baseline facility-mix = 10,208/111,660
 - Facility-informed correction (v2) recovery unchanged: naive mean 3.4% -> corrected 19.8% (obs 27.9%), Brier 0.254->0.222
+- RUNOUT sensitivity (events with >=12mo runout, n=64,868): acute-coded capture 10.5%(7d) 14.4%(30d) 19.4%(90d) 24.0%(180d) 29.6%(365d) 31.9%(540d) -> plateau ~32%, ~2/3 permanent gap (not lag)
+- Event->first acute-coded claim lag (captured events): median 13d, IQR 0-106d, p90 248d

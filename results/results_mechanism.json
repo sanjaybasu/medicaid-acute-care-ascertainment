@@ -1,0 +1,9 @@
+{
+  "n_missing": 82223,
+  "any7_pct": 81.8,
+  "any7_ci": [
+    81.5,
+    82.1
+  ],
+  "entirely_absent_pct": 18.2
+}

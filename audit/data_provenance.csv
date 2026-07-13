@@ -4,15 +4,17 @@ rate_claims,90d acute rate claims,0.018,dataset_2025-07-01.parquet,mean y_claims
 rate_union,90d acute rate union,0.073,dataset_2025-07-01.parquet,mean y_union
 capture_adt,Capture among ADT-covered,0.148,dataset_2025-07-01.parquet,mean y_claims where y_union==1 & adt_active==1
 capture_blended,Blended capture,0.243,dataset_2025-07-01.parquet,mean y_claims where y_union==1
-anchor_obs,Anchor observed rate,0.282,results_full.json,naive.obs
-naive_mean,Naive mean predicted,0.038,results_full.json,naive.mean_pred
-corrected_mean,Corrected mean predicted,0.204,results_full.json,corrected.mean_pred
-brier_naive,Brier naive,0.256,results_full.json,naive.brier
-brier_corrected,Brier corrected,0.229,results_full.json,corrected.brier
-auroc_naive,AUROC naive,0.609,results_full.json,naive.auroc[0]
-auroc_corrected,AUROC corrected,0.603,results_full.json,corrected.auroc[0]
+anchor_obs,Anchor observed rate,0.279,results_full.json,naive.obs
+naive_mean,Naive mean predicted,0.034,results_full.json,naive.mean_pred
+corrected_mean,Corrected mean predicted,0.202,results_full.json,corrected.mean_pred
+brier_naive,Brier naive,0.254,results_full.json,naive.brier
+brier_corrected,Brier corrected,0.227,results_full.json,corrected.brier
+auroc_naive,AUROC naive,0.622,results_full.json,naive.auroc[0]
+auroc_corrected,AUROC corrected,0.608,results_full.json,corrected.auroc[0]
 rob_exclobs_capture,Capture exclude-observation,0.245,results_robust.json,exclude_observation.capture_overall[0]
 rob_altdate_capture,Capture alt index date,0.216,results_robust.json,altdate.capture_overall[0]
 event_capture_auc,Event-level capture model AUROC (GBM),0.788,results_event_capture.json,auc_full_gbm
 event_capture_facility_only,Facility-rate-only capture AUROC,0.654,results_event_capture.json,auc_facility_only
 member_capture_auc_new,Member-level capture AUROC with facility-mix,0.64,results_full_v2.json,capture_auc_new
+runout_540,Capture at 540-day runout,0.319,results_runout.json,curve.540
+fwd_lag_median,Event-to-claim lag median days,13,results_runout.json,fwd_lag_median
