@@ -27,3 +27,5 @@
 - Robustness [exclude_observation]: capture 24.5% [23.6,25.5]; anchor truth 27.4%, naive 3.2% -> corrected 19.2%; AUROC 0.628->0.619; Brier 0.2516->0.2221
 - Robustness [altdate_2025-04-01]: capture 21.6% [20.6,22.7]; anchor truth 25.1%, naive 3.5% -> corrected 20.2%; AUROC 0.633->0.625; Brier 0.227->0.2061
 - e(x) floor sensitivity (corrected mean vs truth 28.2%): 0.02=20.5%, 0.05=20.4%, 0.1=20.0%, 0.15=18.6%, 0.2=16.0%
+- Ablation SCAR(c=0.147) vs SAR: corrected mean 0.192 vs 0.202 (obs 0.279); high-lag stratum (>90d) obs 0.150, naive 0.014, SCAR 0.079, SAR 0.140 (n=420); low-lag obs 0.299 (n=2,679)
+- Capture-model AUROC 0.571 (drop claims-lag→0.525; drop plan→0.612; drop spans→0.573; drop ADT→0.568)

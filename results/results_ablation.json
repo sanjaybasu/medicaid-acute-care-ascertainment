@@ -1,0 +1,36 @@
+{
+  "obs": 0.279,
+  "naive_mean": 0.034,
+  "scar_c": 0.147,
+  "scar_mean": 0.192,
+  "sar_mean": 0.202,
+  "strata": {
+    "lag<=90d": {
+      "n": 2679,
+      "obs": 0.299,
+      "naive": 0.038,
+      "scar": 0.21,
+      "sar": 0.212
+    },
+    "lag>90d": {
+      "n": 420,
+      "obs": 0.15,
+      "naive": 0.014,
+      "scar": 0.079,
+      "sar": 0.14
+    }
+  },
+  "capture_auc_full": 0.571,
+  "capture_auc_dropone": {
+    "plan": 0.612,
+    "claims_lag": 0.525,
+    "enrollment_spans": 0.573,
+    "adt_coverage": 0.568
+  },
+  "e_odds_ratios": {
+    "claims_lag_days": 0.994,
+    "no_claims": 1.0,
+    "n_spans": 1.125,
+    "adt_active": 0.783
+  }
+}
