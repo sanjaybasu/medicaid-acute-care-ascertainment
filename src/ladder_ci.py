@@ -53,6 +53,6 @@ for nm,p in [('status_quo_claims_tabular',p0),('adt_label_tabular',p1),('adt_lab
     R[nm]={'auroc_vs_TRUE':round(au,3),'auroc_vs_TRUE_ci':ci(yU,p,lambda a,b:roc_auc_score(a,b)),
            'auroc_vs_CLAIMS':round(roc_auc_score(yC,p),3),
            'recall10':round(rc,3),'recall10_ci':ci(yU,p,lambda a,b:M(a,b)[1]),
-           'ppv10':round(pp,3),'f1':round(f1,3)}
+           'ppv10':round(pp,3),'f1':round(f1,3),'auroc_vs_CLAIMS_ci':ci(yC,p,lambda a,b:roc_auc_score(a,b)),'ppv10_ci':ci(yU,p,lambda a,b:M(a,b)[2]),'f1_ci':ci(yU,p,lambda a,b:M(a,b)[3])}
 json.dump(R,open('results_ladder_ci.json','w'),indent=2,default=float)
 print(json.dumps(R,indent=2,default=float))
