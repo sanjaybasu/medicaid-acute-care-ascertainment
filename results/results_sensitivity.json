@@ -1,0 +1,60 @@
+{
+  "windows": {
+    "30": {
+      "union_rate": 0.0255,
+      "obs_adt_rate": 0.1242,
+      "capture": 0.143,
+      "n_union_events_adt": 1259,
+      "recall10_statusquo": 0.2178,
+      "recall10_adt": 0.1969,
+      "auroc_statusquo_vs_true": 0.6461,
+      "auroc_adt_vs_true": 0.6445
+    },
+    "60": {
+      "union_rate": 0.0498,
+      "obs_adt_rate": 0.2064,
+      "capture": 0.1501,
+      "n_union_events_adt": 2092,
+      "recall10_statusquo": 0.1786,
+      "recall10_adt": 0.2057,
+      "auroc_statusquo_vs_true": 0.6404,
+      "auroc_adt_vs_true": 0.6584
+    },
+    "90": {
+      "union_rate": 0.0728,
+      "obs_adt_rate": 0.2733,
+      "capture": 0.1477,
+      "n_union_events_adt": 2770,
+      "recall10_statusquo": 0.1632,
+      "recall10_adt": 0.191,
+      "auroc_statusquo_vs_true": 0.6202,
+      "auroc_adt_vs_true": 0.6547
+    },
+    "180": {
+      "union_rate": 0.127,
+      "obs_adt_rate": 0.4094,
+      "capture": 0.1612,
+      "n_union_events_adt": 4150,
+      "recall10_statusquo": 0.1579,
+      "recall10_adt": 0.1653,
+      "auroc_statusquo_vs_true": 0.6428,
+      "auroc_adt_vs_true": 0.665
+    }
+  },
+  "churn": {
+    "disenroll_by_90d": 0.0465,
+    "capture_all_adt": 0.1477,
+    "capture_continuous_enrolled": 0.1506,
+    "n_continuous": 106472,
+    "adt_acute_events_post_disenrollment_frac": 0.0279
+  },
+  "missingness": {
+    "age": 0.0,
+    "payer": 0.0,
+    "claims_lag_days": 0.1263,
+    "n_fac": 0.1731,
+    "n_prov": 0.1731,
+    "enr_days": 0.0,
+    "no_prior_claim (claims_lag null)": 0.1263
+  }
+}

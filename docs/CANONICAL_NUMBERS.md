@@ -66,3 +66,9 @@
 - adt-completed + enriched: 0.658 / 0.204 / 0.568 / 0.300
 - event-sequence (ADT-completed): 0.681 / 0.225 / 0.626 / 0.330; AUROC-claims 0.691
 - Label-side range recall 0.170–0.176 within status-quo 95% CI [0.147,0.186]; none reach 0.191/0.225
+
+## Duration / churn / missing sensitivity (sensitivity_duration_churn.py, coredb live 2026-07-13; results_sensitivity.json)
+- Capture by follow-up window: 30d 14.3% | 60d 15.0% | 90d 14.8% (reproduces headline) | 180d 16.1% -> window-invariant
+- Targeting recall@10 (tabular sq -> ADT-completed): 30d 0.218->0.197 (gain absent, few events) | 60d 0.179->0.206 | 90d 0.163->0.191 | 180d 0.158->0.165 (attenuates as claims run out)
+- Churn: 4.7% disenroll by 90d; capture 14.8% all vs 15.1% continuously-enrolled (n=106,472) -> not churn-driven; 2.8% of ADT acute events post-disenrollment (HIE not claims-gated)
+- Missing baseline: claims_lag null 12.6% (no prior claim); facility/provider 17.3%; zero-filled + indicators

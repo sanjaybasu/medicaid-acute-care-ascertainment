@@ -28,3 +28,6 @@ adt_tabular_recall10,ADT-completed tabular recall at 10%,0.191,results_ladder_ci
 ls_constant_recall10,Constant Elkan-Noto rescale recall (rank-preserving),0.163,results_labelside.json,constant_rescale_claims.recall10,"Results, Targeting",eTable 4
 ls_pureweight_recall10,Covariate PU reweight recall,0.176,results_labelside.json,pu_reweight_claims.recall10,"Results, Targeting",eTable 4
 ls_enriched_recall10,Enriched-feature ADT-completed recall,0.204,results_labelside.json,adt_label_enriched.recall10,,eTable 4
+dur_cap_90,Capture at 90d follow-up (reproduces headline),0.148,results_sensitivity.json,windows.90.capture
+dur_cap_180,Capture at 180d follow-up,0.161,results_sensitivity.json,windows.180.capture
+churn_cont_cap,Capture among continuously enrolled,0.151,results_sensitivity.json,churn.capture_continuous_enrolled

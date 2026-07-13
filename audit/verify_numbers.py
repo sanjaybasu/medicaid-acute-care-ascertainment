@@ -4,18 +4,23 @@ matches the manuscript-reported value. Runs fully offline; no member-level data 
 Exit non-zero on any mismatch. Usage: python3 audit/verify_numbers.py"""
 import json, sys, os
 BASE=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-agg=json.load(open(f'{BASE}/aggregate_summary.json'))
-full=json.load(open(f'{BASE}/results_full.json'))
-rob={r['tag']:r for r in json.load(open(f'{BASE}/results_robust.json'))}
-evc=json.load(open(f'{BASE}/results_event_capture.json'))
-fv2=json.load(open(f'{BASE}/results_full_v2.json'))
-run=json.load(open(f'{BASE}/results_runout.json'))
-rep=json.load(open(f'{BASE}/results_representation.json'))
-pv=json.load(open(f'{BASE}/results_predict_value.json'))
-pua=json.load(open(f'{BASE}/results_pu_advanced.json'))
-lad=json.load(open(f'{BASE}/results_ladder_ci.json'))
-ls=json.load(open(f'{BASE}/results_labelside.json'))
+RES=f'{BASE}/results' if os.path.isdir(f'{BASE}/results') else BASE
+agg=json.load(open(f'{RES}/aggregate_summary.json'))
+full=json.load(open(f'{RES}/results_full.json'))
+rob={r['tag']:r for r in json.load(open(f'{RES}/results_robust.json'))}
+evc=json.load(open(f'{RES}/results_event_capture.json'))
+fv2=json.load(open(f'{RES}/results_full_v2.json'))
+run=json.load(open(f'{RES}/results_runout.json'))
+rep=json.load(open(f'{RES}/results_representation.json'))
+pv=json.load(open(f'{RES}/results_predict_value.json'))
+pua=json.load(open(f'{RES}/results_pu_advanced.json'))
+lad=json.load(open(f'{RES}/results_ladder_ci.json'))
+ls=json.load(open(f'{RES}/results_labelside.json'))
+sn=json.load(open(f'{RES}/results_sensitivity.json'))
 derived={
+ 'dur_cap_90':round(sn['windows']['90']['capture'],3),
+ 'dur_cap_180':round(sn['windows']['180']['capture'],3),
+ 'churn_cont_cap':round(sn['churn']['capture_continuous_enrolled'],3),
  'adt_tabular_recall10':round(lad['adt_label_tabular']['recall10'],3),
  'ls_constant_recall10':round(ls['constant_rescale_claims']['recall10'],3),
  'ls_pureweight_recall10':round(ls['pu_reweight_claims']['recall10'],3),
