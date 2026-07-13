@@ -1,0 +1,9 @@
+{
+  "n_events": 98539,
+  "overall_capture": 0.153,
+  "n_facilities": 954,
+  "auc_old_planonly": 0.732,
+  "auc_facility_only": 0.654,
+  "auc_full_logistic": 0.778,
+  "auc_full_gbm": 0.788
+}

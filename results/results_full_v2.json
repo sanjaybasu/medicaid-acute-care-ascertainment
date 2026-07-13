@@ -1,0 +1,62 @@
+{
+  "members_with_fac_mix": 10208,
+  "n_cohort": 111660,
+  "capture_auc_old": 0.569,
+  "capture_auc_new": 0.64,
+  "n_test_anchor": 3099,
+  "obs": 0.279,
+  "naive": {
+    "auroc": 0.622,
+    "auroc_ci": [
+      0.601,
+      0.645
+    ],
+    "auprc": 0.4,
+    "sens": 0.169,
+    "spec": 0.927,
+    "ppv": 0.471,
+    "npv": 0.743,
+    "f1": 0.249,
+    "slope": 0.357,
+    "intercept": 0.49,
+    "brier": 0.254,
+    "mean": 0.034
+  },
+  "corrected": {
+    "auroc": 0.62,
+    "auroc_ci": [
+      0.598,
+      0.641
+    ],
+    "auprc": 0.392,
+    "sens": 0.172,
+    "spec": 0.928,
+    "ppv": 0.481,
+    "npv": 0.744,
+    "f1": 0.254,
+    "slope": 0.112,
+    "intercept": -0.805,
+    "brier": 0.222,
+    "mean": 0.198
+  },
+  "ablation": {
+    "scar_mean": 0.192,
+    "sar_mean": 0.198,
+    "strata": {
+      "lag<=90d": {
+        "n": 2679,
+        "obs": 0.299,
+        "naive": 0.038,
+        "scar": 0.21,
+        "sar": 0.208
+      },
+      "lag>90d": {
+        "n": 420,
+        "obs": 0.15,
+        "naive": 0.014,
+        "scar": 0.079,
+        "sar": 0.132
+      }
+    }
+  }
+}

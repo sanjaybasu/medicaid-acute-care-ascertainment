@@ -13,3 +13,6 @@ auroc_naive,AUROC naive,0.609,results_full.json,naive.auroc[0]
 auroc_corrected,AUROC corrected,0.603,results_full.json,corrected.auroc[0]
 rob_exclobs_capture,Capture exclude-observation,0.245,results_robust.json,exclude_observation.capture_overall[0]
 rob_altdate_capture,Capture alt index date,0.216,results_robust.json,altdate.capture_overall[0]
+event_capture_auc,Event-level capture model AUROC (GBM),0.788,results_event_capture.json,auc_full_gbm
+event_capture_facility_only,Facility-rate-only capture AUROC,0.654,results_event_capture.json,auc_facility_only
+member_capture_auc_new,Member-level capture AUROC with facility-mix,0.64,results_full_v2.json,capture_auc_new
