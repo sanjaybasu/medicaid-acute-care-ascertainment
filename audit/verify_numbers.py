@@ -11,6 +11,9 @@ rob={r['tag']:r for r in json.load(open(f'{RES}/results_robust.json'))}
 evc=json.load(open(f'{RES}/results_event_capture.json'))
 fv2=json.load(open(f'{RES}/results_full_v2.json'))
 run=json.load(open(f'{RES}/results_runout.json'))
+rep=json.load(open(f'{RES}/results_representation.json'))
+pv=json.load(open(f'{RES}/results_predict_value.json'))
+pua=json.load(open(f'{RES}/results_pu_advanced.json'))
 derived={
  'N_cohort':agg['N_cohort'],
  'rate_claims':round(agg['rate_claims'],3),
@@ -31,6 +34,10 @@ derived={
  'member_capture_auc_new':round(fv2['capture_auc_new'],3),
  'runout_540':round(run['curve']['540'],3),
  'fwd_lag_median':round(run['fwd_lag_median'],0),
+ 'seq_auroc':round(rep['R2_sequence_GRU_3seed'][0],3),
+ 'seq_recall10':round(rep['R2_sequence_GRU_3seed'][1],3),
+ 'statusquo_recall10':round(pv['M0_claims']['recall_top10'],3),
+ 'latent_true_prev':round(pua['latent_class_ADTcovered']['true_prevalence'],3),
 }
 import csv
 reg=list(csv.DictReader(open(f'{BASE}/audit/data_provenance.csv')))

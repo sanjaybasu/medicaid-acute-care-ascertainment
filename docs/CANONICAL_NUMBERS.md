@@ -38,3 +38,13 @@
 - Facility-informed correction (v2) recovery unchanged: naive mean 3.4% -> corrected 19.8% (obs 27.9%), Brier 0.254->0.222
 - RUNOUT sensitivity (events with >=12mo runout, n=64,868): acute-coded capture 10.5%(7d) 14.4%(30d) 19.4%(90d) 24.0%(180d) 29.6%(365d) 31.9%(540d) -> plateau ~32%, ~2/3 permanent gap (not lag)
 - Event->first acute-coded claim lag (captured events): median 13d, IQR 0-106d, p90 248d
+
+## Targeting improvement (label + representation), eval vs true (union) events on held-out ADT anchor (n=3,099; 864 true pos; top-10% outreach)
+- M0 status quo (claims label + tabular): AUROC 0.622, recall@10% 0.169 (146/864), PPV 0.471, F1 0.249
+- +ADT-completed label (tabular): AUROC 0.655, recall@10% 0.191, PPV 0.532, F1 0.281
+- +event-sequence model (GRU, 3-seed avg, ADT-completed label): AUROC 0.681, recall@10% 0.225 (194/864), PPV 0.626, F1 0.330
+- delta sequence vs tabular(ADT-label): dAUROC +0.026 [0.011,0.043]; drecall +0.034 [0.009,0.053] (both significant)
+- FULL STACK vs status quo: AUROC 0.622->0.681; recall@10% 16.9%->22.5% = 146->194 true events per 10% outreach (+33% relative)
+- Enriched tabular features vs ADT-label baseline: dAUROC +0.004 [-0.006,0.014] NS; drecall +0.013 NS (tabular enrichment does NOT significantly help)
+- LABEL-SIDE NULLS (no targeting gain): nnPU AUROC 0.616-0.621; outcome-imputation 0.610; PU rescale 0.608 (all <= status quo 0.622)
+- Latent-class (Dawid-Skene, ADT-covered): true acute prevalence 30.6%, claims sensitivity 13.0%, ADT sensitivity 87.3%

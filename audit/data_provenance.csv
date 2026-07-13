@@ -18,3 +18,7 @@ event_capture_facility_only,Facility-rate-only capture AUROC,0.654,results_event
 member_capture_auc_new,Member-level capture AUROC with facility-mix,0.64,results_full_v2.json,capture_auc_new
 runout_540,Capture at 540-day runout,0.319,results_runout.json,curve.540
 fwd_lag_median,Event-to-claim lag median days,13,results_runout.json,fwd_lag_median
+seq_auroc,Event-sequence model AUROC,0.681,results_representation.json,R2_sequence_GRU_3seed[0]
+seq_recall10,Event-sequence model recall@10%,0.225,results_representation.json,R2_sequence_GRU_3seed[1]
+statusquo_recall10,Status-quo recall@10%,0.169,results_predict_value.json,M0_claims.recall_top10
+latent_true_prev,Latent-class true acute prevalence,0.306,results_pu_advanced.json,latent_class_ADTcovered.true_prevalence

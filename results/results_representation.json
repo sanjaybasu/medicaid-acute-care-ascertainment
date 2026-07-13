@@ -1,0 +1,45 @@
+{
+  "R0_basic": [
+    0.655,
+    0.191,
+    0.532,
+    0.281
+  ],
+  "R1_enriched": [
+    0.658,
+    0.204,
+    0.568,
+    0.3
+  ],
+  "R2_sequence_GRU_3seed": [
+    0.681,
+    0.225,
+    0.626,
+    0.33
+  ],
+  "delta_R2_vs_R0": {
+    "d_auroc": 0.026,
+    "d_auroc_ci": [
+      0.0108,
+      0.0433
+    ],
+    "d_recall": 0.034,
+    "d_recall_ci": [
+      0.0094,
+      0.0531
+    ]
+  },
+  "delta_R1_vs_R0": {
+    "d_auroc": 0.004,
+    "d_auroc_ci": [
+      -0.0058,
+      0.0135
+    ],
+    "d_recall": 0.013,
+    "d_recall_ci": [
+      -0.0054,
+      0.0297
+    ]
+  },
+  "_legend": "[AUROC, recall@10%, PPV@10%, F1@10%]; label=ADT-completed union; eval vs true events on ADT anchor; R2=3-seed avg"
+}
