@@ -2,7 +2,7 @@ import warnings, json, numpy as np, pandas as pd, pathlib
 warnings.filterwarnings("ignore")
 import matplotlib; matplotlib.use('Agg'); import matplotlib.pyplot as plt
 from statsmodels.stats.proportion import proportion_confint
-OUT='/Users/sanjaybasu/waymark-local/notebooks/pu-underascertainment'; pathlib.Path(f'{OUT}/figs').mkdir(exist_ok=True)
+OUT='.'; pathlib.Path(f'{OUT}/figs').mkdir(exist_ok=True)
 df=pd.read_parquet(f'{OUT}/dataset_2025-07-01.parquet'); df['adt_active']=df['adt_active'].fillna(0).astype(int)
 full=json.load(open(f'{OUT}/results_full.json'))
 CB=['#0072B2','#E69F00','#009E73','#D55E00','#CC79A7','#56B4E9','#999999']
