@@ -20,22 +20,20 @@ plt.savefig(f'{OUT}/figs/fig1_prevalence.png',dpi=300); plt.close()
 # Fig2 capture by plan (anonymized, canonical Table 1 values for exact consistency)
 pos=df[df.y_union==1]
 CANON=[("A",12.6,11.4,13.9),("B",12.8,10.7,15.1),("C",13.8,11.4,16.8),("D",15.1,12.8,17.7),
-       ("E",24.3,20.8,28.1),("F",24.5,22.5,26.6),("G",99.7,99.1,99.9)]
+       ("E",24.3,20.8,28.1),("F",24.5,22.5,26.6)]
 labels=[]; est=[]; lerr=[]; herr=[]
 for L,e,lo,hi in CANON:
-    lab=f'Plan {L}\n(no ADT feed)' if e>90 else f'Plan {L}'
-    labels.append(lab); est.append(e); lerr.append(e-lo); herr.append(hi-e)
+    labels.append(f'Plan {L}'); est.append(e); lerr.append(e-lo); herr.append(hi-e)
 overall=14.8
-fig,ax=plt.subplots(figsize=(5.6,3.8),constrained_layout=True)
-colors=[CB[6] if e>90 else CB[0] for e in est]
+fig,ax=plt.subplots(figsize=(5.6,3.6),constrained_layout=True)
 y=np.arange(len(labels))
-ax.barh(y,est,xerr=[lerr,herr],color=colors,capsize=3,height=0.62)
+ax.barh(y,est,xerr=[lerr,herr],color=CB[0],capsize=3,height=0.62)
 ax.set_yticks(y); ax.set_yticklabels(labels)
-ax.set_xlim(0,112)
-for i,e in enumerate(est): ax.text(min(e+max(herr[i],2)+3,104),i,f'{e:.0f}%',va='center',ha='left',fontsize=9)
+ax.set_xlim(0,34)
+for i,e in enumerate(est): ax.text(e+herr[i]+1.2,i,f'{e:.0f}%',va='center',ha='left',fontsize=9)
 ax.axvline(overall,ls='--',color=CB[3],lw=1.3,label=f'ADT-covered overall {overall:.0f}%')
 ax.set_xlabel('Claims capture of acute care events (%, 95% CI)')
-ax.set_title('Figure 2. Claims capture by plan'); ax.legend(loc='lower right',framealpha=0.9)
+ax.set_title('Figure 2. Claims capture among ADT-covered plans'); ax.legend(loc='lower right',framealpha=0.9)
 plt.savefig(f'{OUT}/figs/fig2_capture_payer.png',dpi=300); plt.close()
 
 # Fig3 capture by lag

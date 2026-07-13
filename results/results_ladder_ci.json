@@ -1,0 +1,48 @@
+{
+  "n_anchor": 3099,
+  "status_quo_claims_tabular": {
+    "auroc_vs_TRUE": 0.62,
+    "auroc_vs_TRUE_ci": [
+      0.599,
+      0.644
+    ],
+    "auroc_vs_CLAIMS": 0.758,
+    "recall10": 0.163,
+    "recall10_ci": [
+      0.147,
+      0.186
+    ],
+    "ppv10": 0.455,
+    "f1": 0.24
+  },
+  "adt_label_tabular": {
+    "auroc_vs_TRUE": 0.655,
+    "auroc_vs_TRUE_ci": [
+      0.634,
+      0.677
+    ],
+    "auroc_vs_CLAIMS": 0.716,
+    "recall10": 0.191,
+    "recall10_ci": [
+      0.174,
+      0.213
+    ],
+    "ppv10": 0.532,
+    "f1": 0.281
+  },
+  "adt_label_sequence": {
+    "auroc_vs_TRUE": 0.681,
+    "auroc_vs_TRUE_ci": [
+      0.66,
+      0.701
+    ],
+    "auroc_vs_CLAIMS": 0.691,
+    "recall10": 0.225,
+    "recall10_ci": [
+      0.206,
+      0.243
+    ],
+    "ppv10": 0.626,
+    "f1": 0.33
+  }
+}

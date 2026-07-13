@@ -1,0 +1,38 @@
+{
+  "status_quo_claims_tabular": {
+    "auroc_vs_TRUE": 0.62,
+    "recall10": 0.163,
+    "ppv10": 0.455,
+    "f1": 0.24
+  },
+  "pu_reweight_claims": {
+    "auroc_vs_TRUE": 0.614,
+    "recall10": 0.176,
+    "ppv10": 0.49,
+    "f1": 0.259
+  },
+  "nnpu_claims": {
+    "auroc_vs_TRUE": 0.633,
+    "recall10": 0.17,
+    "ppv10": 0.474,
+    "f1": 0.25
+  },
+  "imputation_claims": {
+    "auroc_vs_TRUE": 0.614,
+    "recall10": 0.176,
+    "ppv10": 0.49,
+    "f1": 0.259
+  },
+  "constant_rescale_claims": {
+    "auroc_vs_TRUE": 0.62,
+    "recall10": 0.163,
+    "ppv10": 0.455,
+    "f1": 0.24
+  },
+  "adt_label_enriched": {
+    "auroc_vs_TRUE": 0.658,
+    "recall10": 0.204,
+    "ppv10": 0.568,
+    "f1": 0.3
+  }
+}

@@ -5,7 +5,7 @@ rate_union,90d acute rate union,0.073,dataset_2025-07-01.parquet,mean y_union
 capture_adt,Capture among ADT-covered,0.148,dataset_2025-07-01.parquet,mean y_claims where y_union==1 & adt_active==1
 capture_blended,Blended capture,0.243,dataset_2025-07-01.parquet,mean y_claims where y_union==1
 anchor_obs,Anchor observed rate,0.279,results_full.json,naive.obs
-naive_mean,Naive mean predicted,0.034,results_full.json,naive.mean_pred
+naive_mean,Naive mean predicted,0.035,results_full.json,naive.mean_pred
 corrected_mean,Corrected mean predicted,0.202,results_full.json,corrected.mean_pred
 brier_naive,Brier naive,0.254,results_full.json,naive.brier
 brier_corrected,Brier corrected,0.227,results_full.json,corrected.brier
@@ -18,7 +18,13 @@ event_capture_facility_only,Facility-rate-only capture AUROC,0.654,results_event
 member_capture_auc_new,Member-level capture AUROC with facility-mix,0.64,results_full_v2.json,capture_auc_new
 runout_540,Capture at 540-day runout,0.319,results_runout.json,curve.540
 fwd_lag_median,Event-to-claim lag median days,13,results_runout.json,fwd_lag_median
-seq_auroc,Event-sequence model AUROC,0.681,results_representation.json,R2_sequence_GRU_3seed[0]
-seq_recall10,Event-sequence model recall@10%,0.225,results_representation.json,R2_sequence_GRU_3seed[1]
-statusquo_recall10,Status-quo recall@10%,0.169,results_predict_value.json,M0_claims.recall_top10
+seq_auroc,Event-sequence model AUROC (vs true),0.681,results_ladder_ci.json,adt_label_sequence.auroc_vs_TRUE
+seq_recall10,Event-sequence model recall@10%,0.225,results_ladder_ci.json,adt_label_sequence.recall10
+statusquo_recall10,Status-quo recall@10%,0.163,results_ladder_ci.json,status_quo_claims_tabular.recall10
 latent_true_prev,Latent-class true acute prevalence,0.306,results_pu_advanced.json,latent_class_ADTcovered.true_prevalence
+statusquo_auc_true,Status-quo AUROC vs true events,0.620,results_ladder_ci.json,status_quo_claims_tabular.auroc_vs_TRUE
+statusquo_auc_claims,Status-quo AUROC vs claims outcome,0.758,results_ladder_ci.json,status_quo_claims_tabular.auroc_vs_CLAIMS
+adt_tabular_recall10,ADT-completed tabular recall at 10%,0.191,results_ladder_ci.json,adt_label_tabular.recall10,"Results, Targeting",eTable 4
+ls_constant_recall10,Constant Elkan-Noto rescale recall (rank-preserving),0.163,results_labelside.json,constant_rescale_claims.recall10,"Results, Targeting",eTable 4
+ls_pureweight_recall10,Covariate PU reweight recall,0.176,results_labelside.json,pu_reweight_claims.recall10,"Results, Targeting",eTable 4
+ls_enriched_recall10,Enriched-feature ADT-completed recall,0.204,results_labelside.json,adt_label_enriched.recall10,,eTable 4

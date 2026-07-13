@@ -4,17 +4,22 @@ matches the manuscript-reported value. Runs fully offline; no member-level data 
 Exit non-zero on any mismatch. Usage: python3 audit/verify_numbers.py"""
 import json, sys, os
 BASE=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-RES=os.path.join(BASE,'results')
-agg=json.load(open(f'{RES}/aggregate_summary.json'))
-full=json.load(open(f'{RES}/results_full.json'))
-rob={r['tag']:r for r in json.load(open(f'{RES}/results_robust.json'))}
-evc=json.load(open(f'{RES}/results_event_capture.json'))
-fv2=json.load(open(f'{RES}/results_full_v2.json'))
-run=json.load(open(f'{RES}/results_runout.json'))
-rep=json.load(open(f'{RES}/results_representation.json'))
-pv=json.load(open(f'{RES}/results_predict_value.json'))
-pua=json.load(open(f'{RES}/results_pu_advanced.json'))
+agg=json.load(open(f'{BASE}/aggregate_summary.json'))
+full=json.load(open(f'{BASE}/results_full.json'))
+rob={r['tag']:r for r in json.load(open(f'{BASE}/results_robust.json'))}
+evc=json.load(open(f'{BASE}/results_event_capture.json'))
+fv2=json.load(open(f'{BASE}/results_full_v2.json'))
+run=json.load(open(f'{BASE}/results_runout.json'))
+rep=json.load(open(f'{BASE}/results_representation.json'))
+pv=json.load(open(f'{BASE}/results_predict_value.json'))
+pua=json.load(open(f'{BASE}/results_pu_advanced.json'))
+lad=json.load(open(f'{BASE}/results_ladder_ci.json'))
+ls=json.load(open(f'{BASE}/results_labelside.json'))
 derived={
+ 'adt_tabular_recall10':round(lad['adt_label_tabular']['recall10'],3),
+ 'ls_constant_recall10':round(ls['constant_rescale_claims']['recall10'],3),
+ 'ls_pureweight_recall10':round(ls['pu_reweight_claims']['recall10'],3),
+ 'ls_enriched_recall10':round(ls['adt_label_enriched']['recall10'],3),
  'N_cohort':agg['N_cohort'],
  'rate_claims':round(agg['rate_claims'],3),
  'rate_union':round(agg['rate_union'],3),
@@ -34,9 +39,11 @@ derived={
  'member_capture_auc_new':round(fv2['capture_auc_new'],3),
  'runout_540':round(run['curve']['540'],3),
  'fwd_lag_median':round(run['fwd_lag_median'],0),
- 'seq_auroc':round(rep['R2_sequence_GRU_3seed'][0],3),
- 'seq_recall10':round(rep['R2_sequence_GRU_3seed'][1],3),
- 'statusquo_recall10':round(pv['M0_claims']['recall_top10'],3),
+ 'seq_auroc':round(lad['adt_label_sequence']['auroc_vs_TRUE'],3),
+ 'seq_recall10':round(lad['adt_label_sequence']['recall10'],3),
+ 'statusquo_recall10':round(lad['status_quo_claims_tabular']['recall10'],3),
+ 'statusquo_auc_true':round(lad['status_quo_claims_tabular']['auroc_vs_TRUE'],3),
+ 'statusquo_auc_claims':round(lad['status_quo_claims_tabular']['auroc_vs_CLAIMS'],3),
  'latent_true_prev':round(pua['latent_class_ADTcovered']['true_prevalence'],3),
 }
 import csv
