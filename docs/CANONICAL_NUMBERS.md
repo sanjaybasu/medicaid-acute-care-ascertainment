@@ -1,0 +1,29 @@
+# CANONICAL NUMBERS (source of truth for manuscript/appendix/repo)
+
+- Primary cohort N = 111,660 (index 2025-07-01, 90-day follow-up)
+- Plans = 7 Medicaid MCOs across OH, VA, WA
+- Member 90-day acute rate: claims 1.77%, ADT 6.22%, union 7.28%
+- PRIMARY capture (ADT-covered members, identifiable stratum) = 14.8% [13.5, 16.1] (n=2,770)
+- Blended all-plan capture (diluted by non-ADT plans; NOT identifiable) = 24.3% [23.4, 25.2] (n=8,227)
+- Non-ADT stratum capture (mechanical, union≈claims) = 29.3% (n=5,356)
+  - Plan A: 12.6% [11.4, 13.9] (n=2895)
+  - Plan B: 12.8% [10.7, 15.1] (n=894)
+  - Plan C: 13.8% [11.4, 16.8] (n=621)
+  - Plan D: 15.1% [12.8, 17.7] (n=841)
+  - Plan E: 24.3% [20.8, 28.1] (n=523)
+  - Plan F: 24.5% [22.5, 26.6] (n=1682)
+  - Plan G: 99.7% [99.1, 99.9] (n=771)
+- Capture by claims lag (days): ≤30=29.0%, 31-90=17.5%, 91-180=15.2%, >180=13.9%
+- Ambulatory-claims among ADT-only-acute members = 93.9% (39,642/42,232) [source: characterization query crux4]
+- Capture range across the six ADT-covered plans = 12.6% to 24.5% (four plans 12.6-15.1%; Plan E 24.3%, Plan F 24.5%)
+- Anchor recovery (held-out ADT, n=2,989, truth=28.2%): naive mean 3.8% -> corrected 20.4%
+- Discrimination (anchor): AUROC naive 0.6093 [0.5868,0.6311], corrected 0.6031 [0.5778,0.626]
+- AUPRC: naive 0.3959, corrected 0.3845
+- @top-10%: naive sens 0.171 spec 0.9278 PPV 0.4816 NPV 0.7405 F1 0.2524
+- @top-10%: corrected sens 0.1651 spec 0.9255 PPV 0.4649 NPV 0.7387 F1 0.2436
+- Brier: naive 0.2555, corrected 0.2292
+- Calibration slope/intercept: naive 0.3121/0.3023, corrected 0.1036/-0.8139
+- Robustness [primary_union]: capture 24.3% [23.4,25.3]; anchor truth 27.9%, naive 3.4% -> corrected 20.2%; AUROC 0.622->0.608; Brier 0.2544->0.2269
+- Robustness [exclude_observation]: capture 24.5% [23.6,25.5]; anchor truth 27.4%, naive 3.2% -> corrected 19.2%; AUROC 0.628->0.619; Brier 0.2516->0.2221
+- Robustness [altdate_2025-04-01]: capture 21.6% [20.6,22.7]; anchor truth 25.1%, naive 3.5% -> corrected 20.2%; AUROC 0.633->0.625; Brier 0.227->0.2061
+- e(x) floor sensitivity (corrected mean vs truth 28.2%): 0.02=20.5%, 0.05=20.4%, 0.1=20.0%, 0.15=18.6%, 0.2=16.0%

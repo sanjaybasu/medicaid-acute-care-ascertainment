@@ -1,0 +1,6 @@
+*.parquet
+*.docx
+*.pyc
+__pycache__/
+_*.py
+.DS_Store

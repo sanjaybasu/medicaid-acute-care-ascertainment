@@ -1,0 +1,191 @@
+[
+  {
+    "tag": "primary_union",
+    "ycol": "y_union",
+    "n": 111660,
+    "y_claims": 0.0177,
+    "y_outcome": 0.0728,
+    "capture_overall": [
+      0.243,
+      0.234,
+      0.253,
+      8126
+    ],
+    "capture_by_payer": {
+      "Plan A": [
+        0.126,
+        0.114,
+        0.138,
+        2869
+      ],
+      "Plan D": [
+        0.149,
+        0.126,
+        0.175,
+        827
+      ],
+      "Plan G": [
+        0.997,
+        0.991,
+        0.999,
+        764
+      ],
+      "Plan E": [
+        0.251,
+        0.216,
+        0.291,
+        505
+      ],
+      "Plan F": [
+        0.244,
+        0.224,
+        0.265,
+        1659
+      ],
+      "Plan C": [
+        0.138,
+        0.113,
+        0.167,
+        617
+      ],
+      "Plan B": [
+        0.129,
+        0.108,
+        0.152,
+        885
+      ]
+    },
+    "anchor_n": 3099,
+    "obs": 0.279,
+    "naive_mean": 0.034,
+    "corrected_mean": 0.202,
+    "naive_auroc": 0.622,
+    "corrected_auroc": 0.608,
+    "naive_brier": 0.2544,
+    "corrected_brier": 0.2269
+  },
+  {
+    "tag": "exclude_observation",
+    "ycol": "y_union_noobs",
+    "n": 111660,
+    "y_claims": 0.0177,
+    "y_outcome": 0.0722,
+    "capture_overall": [
+      0.245,
+      0.236,
+      0.255,
+      8060
+    ],
+    "capture_by_payer": {
+      "Plan A": [
+        0.127,
+        0.115,
+        0.14,
+        2844
+      ],
+      "Plan D": [
+        0.15,
+        0.127,
+        0.176,
+        822
+      ],
+      "Plan G": [
+        0.997,
+        0.991,
+        0.999,
+        764
+      ],
+      "Plan E": [
+        0.253,
+        0.217,
+        0.293,
+        501
+      ],
+      "Plan F": [
+        0.247,
+        0.227,
+        0.269,
+        1638
+      ],
+      "Plan C": [
+        0.139,
+        0.114,
+        0.168,
+        613
+      ],
+      "Plan B": [
+        0.13,
+        0.109,
+        0.154,
+        878
+      ]
+    },
+    "anchor_n": 3099,
+    "obs": 0.274,
+    "naive_mean": 0.032,
+    "corrected_mean": 0.192,
+    "naive_auroc": 0.628,
+    "corrected_auroc": 0.619,
+    "naive_brier": 0.2516,
+    "corrected_brier": 0.2221
+  },
+  {
+    "tag": "altdate_2025-04-01",
+    "ycol": "y_union",
+    "n": 65488,
+    "y_claims": 0.0184,
+    "y_outcome": 0.0849,
+    "capture_overall": [
+      0.216,
+      0.206,
+      0.227,
+      5560
+    ],
+    "capture_by_payer": {
+      "Plan A": [
+        0.144,
+        0.132,
+        0.158,
+        2838
+      ],
+      "Plan D": [
+        0.166,
+        0.142,
+        0.193,
+        796
+      ],
+      "Plan E": [
+        0.846,
+        0.758,
+        0.906,
+        91
+      ],
+      "Plan F": [
+        0.485,
+        0.45,
+        0.52,
+        765
+      ],
+      "Plan C": [
+        0.324,
+        0.276,
+        0.375,
+        343
+      ],
+      "Plan B": [
+        0.142,
+        0.118,
+        0.169,
+        727
+      ]
+    },
+    "anchor_n": 2410,
+    "obs": 0.251,
+    "naive_mean": 0.035,
+    "corrected_mean": 0.202,
+    "naive_auroc": 0.633,
+    "corrected_auroc": 0.625,
+    "naive_brier": 0.227,
+    "corrected_brier": 0.2061
+  }
+]
