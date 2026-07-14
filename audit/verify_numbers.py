@@ -17,7 +17,9 @@ pua=json.load(open(f'{RES}/results_pu_advanced.json'))
 lad=json.load(open(f'{RES}/results_ladder_ci.json'))
 ls=json.load(open(f'{RES}/results_labelside.json'))
 sn=json.load(open(f'{RES}/results_sensitivity.json'))
+am=json.load(open(f'{RES}/results_adt_merge.json'))
 derived={
+ 'adt_merge_pct_collapsed':round(am['pct_events_collapsed'],3),
  'dur_cap_90':round(sn['windows']['90']['capture'],3),
  'dur_cap_180':round(sn['windows']['180']['capture'],3),
  'churn_cont_cap':round(sn['churn']['capture_continuous_enrolled'],3),

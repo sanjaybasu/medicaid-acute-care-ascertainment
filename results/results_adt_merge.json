@@ -1,0 +1,34 @@
+{
+  "before": {
+    "label": "before_merge (dedup person/date/facility)",
+    "n_events": 98577,
+    "overall_capture_30d": 0.153,
+    "runout_curve": {
+      "30": 0.153,
+      "90": 0.205,
+      "180": 0.246,
+      "365": 0.291,
+      "540": 0.309
+    },
+    "capture_model_auc_gbm": 0.818,
+    "pct_ed": 0.839,
+    "pct_inpat": 0.142
+  },
+  "after": {
+    "label": "after_merge (ED->IP within 1 day, IP precedence)",
+    "n_events": 91932,
+    "overall_capture_30d": 0.142,
+    "runout_curve": {
+      "30": 0.142,
+      "90": 0.192,
+      "180": 0.233,
+      "365": 0.279,
+      "540": 0.296
+    },
+    "capture_model_auc_gbm": 0.844,
+    "pct_ed": 0.833,
+    "pct_inpat": 0.148
+  },
+  "n_collapsed": 6645,
+  "pct_events_collapsed": 0.067
+}

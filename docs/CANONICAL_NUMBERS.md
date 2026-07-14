@@ -72,3 +72,8 @@
 - Targeting recall@10 (tabular sq -> ADT-completed): 30d 0.218->0.197 (gain absent, few events) | 60d 0.179->0.206 | 90d 0.163->0.191 | 180d 0.158->0.165 (attenuates as claims run out)
 - Churn: 4.7% disenroll by 90d; capture 14.8% all vs 15.1% continuously-enrolled (n=106,472) -> not churn-driven; 2.8% of ADT acute events post-disenrollment (HIE not claims-gated)
 - Missing baseline: claims_lag null 12.6% (no prior claim); facility/provider 17.3%; zero-filled + indicators
+
+## ADT episode-merge sensitivity (adt_episode_merge.py -> results_adt_merge.json)
+- Collapsing ED+IP ADT messages within 1 day (IP precedence): events 98,577 -> 91,932 (6.7% collapsed)
+- runout@540: 0.309 -> 0.296 (permanent plateau ~30% unchanged); capture@30d 0.153 -> 0.142
+- event-level capture-model AUROC 0.818 -> 0.844 (robust; cleaner after merge). NOTE eTable 3 headline uses event_capture.py (0.79); this is a separate consistent-within-run sensitivity, not a re-derivation of 0.79

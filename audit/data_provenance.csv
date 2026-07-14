@@ -31,3 +31,4 @@ ls_enriched_recall10,Enriched-feature ADT-completed recall,0.204,results_labelsi
 dur_cap_90,Capture at 90d follow-up (reproduces headline),0.148,results_sensitivity.json,windows.90.capture
 dur_cap_180,Capture at 180d follow-up,0.161,results_sensitivity.json,windows.180.capture
 churn_cont_cap,Capture among continuously enrolled,0.151,results_sensitivity.json,churn.capture_continuous_enrolled
+adt_merge_pct_collapsed,ADT ED->IP episode-merge fraction collapsed,0.067,results_adt_merge.json,pct_events_collapsed
